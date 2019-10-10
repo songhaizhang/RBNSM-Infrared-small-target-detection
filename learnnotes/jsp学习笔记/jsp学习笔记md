@@ -1,0 +1,56 @@
+动态网页的动态指的是能与用户进行交互，比如登陆时输入正确的用户名和密码
+系统会提示登陆成功
+
+jsp导包格式：<%@ page import java.util%>
+
+jsp路径部署：http://localhost:8080/lhms(工程名)/NewFile.jsp
+
+eclipse集成tomcat服务器：windows->preferences->server->runtime environment 
+
+page指令：位于jsp顶端
+include指令：将一个外部文件嵌入到当前jsp文件中，同时解析这个页面中的jsp语句
+taglib指令：使用标签库定义新的自定义标签，在jsp页面中启用定制行为
+
+page指令语法：<%@ page 属性1="属性1" 属性2="属性2"...属性n="属性n"%>
+常用属性有：language：指定jsp页面使用脚本的语言  默认值：java
+                  import：通过该属性来引用脚本语言中使用到的类文件
+		  contentType：用来指定jsp页面所采用的编码方式 默认值：text/html,ISO-8859-1
+
+jsp声明：<%! java语句 %>
+jsp表达式：<%=表达式 %>  //注意表达式不以分号结束
+
+要想在jsp的<%%>java语句部分输出换行则 out.println("<br>");
+
+jsp脚本中输出：函数中 例 void jiujiu(JspWriter out){}要传入out对象
+
+如果一个表达式要调用一个方法，则这个方法必须要有返回值，否则无法调用，详见九九乘法表
+
+jsp九大内置对象：out,request,response,session,application等
+
+缓冲区：Buffer ，就是内存的一块区域用来保存临时数据
+
+out对象：JspWriter类的实例对象，是向客户端输出内容的常用的对象
+常用方法：1.void println() 向客户端打印字符串
+	       2.void clear() 清除缓冲区内容，如果在flush后调用会抛出异常
+	       3.void clearBuffer() 清除缓冲区内容，如果在flush后调用不会抛出异常
+	       4.void flush() 将缓冲区的内容输出到客户端
+	       5.int getBufferSize() 返回缓冲区以字节数的大小，如果不设缓冲区则为0
+	       6.int getRemaining() 返回缓冲区还剩余多少可用
+	       7.boolean isAutoFlush() 返回缓冲区满时，是自动清空还是抛出异常
+	       8.void close() 关闭输出流
+
+request对象：客户端的请求信息被封装在request对象中，通过他才能了解客户需求，然后做出响应。它是                     HttpServletRequest类的实例。request对象具有请求域，即完成客户端的请求之前，该对			    象一直有效.
+常用方法如下: 1.String getParameter(String name) 返回name指定参数的参数值
+                    2.String[] getParameterValues(String name) 返回包含参数name的所有值的数组
+		    3.void setAttribute(String,Object) 存储此请求中的属性
+		    4.object getAttribute(String name) 返回指定属性的属性值
+		    5.String getContentType() 得到请求体的MIME类型
+		    6.String getProtocol() 返回请求用的协议类型及版本号
+		    7.String getServerName() 返回接受请求的服务器主机名
+		    8.int getServerPort()  返回服务器接受此请求所用的端口号
+		    9.String getCharacterEncoding() 返回字符编码方式
+		    10.void setCharacterEncoding() 设置请求的字符编码方式
+		    11.int getContentLenth() 返回请求体的长度
+		    12.String getRemoteAddr() 返回发送此请求服务端的id地址
+		    13.String getRealPath(String path) 返回一虚拟路径的真实路径
+		    14.String request.getContentPath() 返回上下文路径
