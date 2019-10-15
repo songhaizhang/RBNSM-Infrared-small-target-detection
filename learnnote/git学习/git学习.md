@@ -62,3 +62,5 @@ Port 443
 
 ###gitPush 报错 remote: Invalid username or password（输入的用户名和密码没错）
 <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">解决方案见此</a>
+
+###git个人令牌：9a51a541fee5a71e75edcbf33f3f4421a198cff6
