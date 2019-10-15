@@ -18,3 +18,6 @@ matDst = np.float32([[50,50],[300,height-200],[width-300,100]])
 matscale = cv2.getAffineTransform(matSrc,matDst)
 dst = cv2.warpAffine(img,matscale,(width,height))
 ```
+
+###图片的叠加以及透明度设置cv2.addWeighted(src1, alpha, src2, beta, gamma[, dst[, dtype]])
+其中alpha为src1的透明度，beta为src2的透明度
