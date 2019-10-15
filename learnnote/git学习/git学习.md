@@ -55,3 +55,10 @@ PreferredAuthentications publickey
 IdentityFile ~/.ssh/id_rsa  
 Port 443
 ```
+
+###github修改用户名后出现：remote: This repository moved. Please use the new location:
+执行：
+`git remote set-url origin https://github.com/YOUR-USERNAME/YOUR-REPO.git`
+
+###gitPush 报错 remote: Invalid username or password（输入的用户名和密码没错）
+<a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">解决方案见此</a>
